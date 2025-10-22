@@ -5,6 +5,11 @@ using TMPro;
 
 public class PlayerMovementAdvanced : MonoBehaviour
 {
+    [Header("UI References")]
+    public GameObject playerHUD;
+    public GameObject victoryScreen;
+    public GameObject gameOverScreen;
+
     [Header("Movement")]
     private float moveSpeed;
     private float desiredMoveSpeed;
@@ -92,6 +97,15 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Start()
     {
+        //if (playerHUD != null)
+        //    playerHUD.SetActive(false);
+
+        if (victoryScreen != null)
+            victoryScreen.SetActive(false);
+
+        if (gameOverScreen != null)
+            gameOverScreen.SetActive(false);
+
         climbingScriptDone = GetComponent<ClimbingDone>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
