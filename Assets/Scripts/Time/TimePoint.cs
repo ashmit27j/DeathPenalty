@@ -11,7 +11,7 @@ public class TimePoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             deathTimer.AddTime(timeToAdd);
-            Debug.Log("Added " + timeToAdd + " seconds!");
+            Debug.Log("Added " + timeToAdd + " seconds! ez");
             Destroy(gameObject);
         }
     }

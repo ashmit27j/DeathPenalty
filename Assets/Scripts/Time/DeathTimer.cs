@@ -1,4 +1,3 @@
-
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -69,10 +68,11 @@ public class DeathTimer : MonoBehaviour
         Debug.Log("Added " + seconds + " seconds. New time: " + timeRemaining);
     }
 
-    void EndGame()
+    public void EndGame()
     {
-        timerActive = false;
+        //Destroy(GameObject.FindWithTag("Player"));
         Debug.Log("Game Over!");
+        timerActive = false;
 
         if (gameOverCanvas != null)
         {
