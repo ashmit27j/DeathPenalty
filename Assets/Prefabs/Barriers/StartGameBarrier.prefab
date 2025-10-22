@@ -413,6 +413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9214841387207433952}
+  - component: {fileID: 5777517301253915067}
   m_Layer: 0
   m_Name: ArrowHeadParent
   m_TagString: Untagged
@@ -437,6 +438,22 @@ Transform:
   - {fileID: 913042462548017705}
   m_Father: {fileID: 8890808350834587714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5777517301253915067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180149336177820118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8ed4af0d75b4048b7148a37b64ede9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowheadOscillator
+  arrowheadLeft: {fileID: 7439585286214534015}
+  arrowheadRight: {fileID: 913042462548017705}
+  moveDistance: 0.2
+  moveTime: 0.3
 --- !u!1 &1410280320365946924
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +465,6 @@ GameObject:
   - component: {fileID: 5895399729805560001}
   - component: {fileID: 3386177805584949437}
   - component: {fileID: 6116244845225997973}
-  - component: {fileID: 5860398753340286210}
   m_Layer: 0
   m_Name: BarrierCube
   m_TagString: Untagged
@@ -527,27 +543,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5860398753340286210
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410280320365946924}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1554273160016819721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1208,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8890808350834587714}
+  - component: {fileID: 6920082233994576013}
+  - component: {fileID: 8080026468782731660}
   m_Layer: 0
   m_Name: StartGameBarrier
   m_TagString: Untagged
@@ -1238,6 +1235,40 @@ Transform:
   - {fileID: 2870708928816532719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6920082233994576013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002785555197100566}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 2, z: 0.5}
+  m_Center: {x: -0.028448105, y: 0, z: 0}
+--- !u!114 &8080026468782731660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002785555197100566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd14078c25870740bce0e0cd5f2e90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartTimer
+  deathTimer: {fileID: 0}
 --- !u!1 &9140930770494156034
 GameObject:
   m_ObjectHideFlags: 0
