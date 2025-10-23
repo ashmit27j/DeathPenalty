@@ -24,6 +24,9 @@ public class ThrowingTutorial : MonoBehaviour
 
     bool readyToThrow;
 
+    // Reference GameController
+    public GameController gameController;
+
     private void Awake()
     {
         instance = this;
@@ -33,10 +36,18 @@ public class ThrowingTutorial : MonoBehaviour
     {
         readyToThrow = true;
         UpdateShurikenUI();
+
+        // Cache GameController reference (drag in Inspector, or try FindObjectOfType)
+        if (gameController == null)
+            gameController = FindObjectOfType<GameController>();
     }
 
     private void Update()
     {
+        // Prevent throwing unless gameStarted is true
+        if (gameController != null && !gameController.gameStarted)
+            return;
+
         if (Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
         {
             Throw();

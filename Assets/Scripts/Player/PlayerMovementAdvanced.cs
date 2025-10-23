@@ -10,11 +10,8 @@ using TMPro;
 
 public class PlayerMovementAdvanced : MonoBehaviour
 {
-    [Header("UI References")]
-    public GameObject playerHUD;
-    public GameObject victoryScreen;
-    public GameObject gameOverScreen;
-    public GameObject menuScreen;
+    [Header("Controllers")]
+    public GameController gameController;
 
     [Header("Movement")]
     private float moveSpeed;
@@ -118,12 +115,6 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Start()
     {
-        if (victoryScreen != null)
-            victoryScreen.SetActive(false);
-        if (gameOverScreen != null)
-            gameOverScreen.SetActive(false);
-        if (menuScreen != null)
-            menuScreen.SetActive(false);
 
         dashing = false;
         maxYSpeed = 0f;
@@ -140,6 +131,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Update()
     {
+        if (gameController != null && !gameController.gameStarted)
+            return;
+
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
         MyInput();
