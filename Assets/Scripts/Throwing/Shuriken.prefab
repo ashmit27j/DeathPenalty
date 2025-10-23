@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 499317369497635081}
   - component: {fileID: 2088076471691980879}
   - component: {fileID: 8122631620820155772}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Shuriken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileAddon
   damage: 10
+  destroyAfterSeconds: 3
 --- !u!135 &8122631620820155772
 SphereCollider:
   m_ObjectHideFlags: 0

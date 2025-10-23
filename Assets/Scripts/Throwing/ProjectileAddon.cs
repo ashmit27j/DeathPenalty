@@ -5,18 +5,25 @@ using UnityEngine;
 public class ProjectileAddon : MonoBehaviour
 {
     public int damage;
+    public float destroyAfterSeconds = 3f;
 
     private Rigidbody rb;
-
     private bool targetHit;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Destroy projectile after specified time
+        Destroy(gameObject, destroyAfterSeconds);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Ignore collision with player
+        if (collision.gameObject.layer == LayerMask.NameToLayer("whatIsPlayer"))
+            return;
+
         // make sure only to stick to the first target you hit
         if (targetHit)
             return;
@@ -24,14 +31,15 @@ public class ProjectileAddon : MonoBehaviour
             targetHit = true;
 
         // check if you hit an enemy
-        if(collision.gameObject.GetComponent<BasicEnemy>() != null)
+        if (collision.gameObject.GetComponent<BasicEnemy>() != null)
         {
             BasicEnemy enemy = collision.gameObject.GetComponent<BasicEnemy>();
 
             enemy.TakeDamage(damage);
 
-            // destroy projectile
+            // destroy projectile immediately
             Destroy(gameObject);
+            return;
         }
 
         // make sure projectile sticks to surface

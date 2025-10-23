@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
@@ -16,6 +15,12 @@ public class BasicEnemy : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        // On death, increase shuriken count by 1
+        if (ThrowingTutorial.instance != null)
+        {
+            ThrowingTutorial.instance.AddShuriken(1);
+        }
+
         Destroy(gameObject);
     }
 }
