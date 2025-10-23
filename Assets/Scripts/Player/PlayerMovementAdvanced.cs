@@ -14,6 +14,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     public GameObject playerHUD;
     public GameObject victoryScreen;
     public GameObject gameOverScreen;
+    public GameObject menuScreen;
 
     [Header("Movement")]
     private float moveSpeed;
@@ -121,6 +122,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
             victoryScreen.SetActive(false);
         if (gameOverScreen != null)
             gameOverScreen.SetActive(false);
+        if (menuScreen != null)
+            menuScreen.SetActive(false);
 
         dashing = false;
         maxYSpeed = 0f;
